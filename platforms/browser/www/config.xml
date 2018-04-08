@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="de.conturio.dkm.stellenmarkt.app" version="1.1.7" versionCode="117" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.e-spirit.ps.dsd.caas.mobile.app" version="0.1.7" versionCode="017" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
     <feature name="Device">
         <param name="browser-package" value="Device" />
     </feature>
-    <name>DKM Stellenmarkt</name>
+    <name>DSD example mobile app</name>
     <description>
-        Mobiler Stellenmarkt für Kirche und Caritas 
+        Mobile App for DSD 
     </description>
-    <author email="richter@conturio.de" href="http://www.conturio.de">
-        conturio content management consulting and services 
+    <author email="richter@e-spirit.com" href="http://www.e-spirit.com">
+        e-Spirit AG 
     </author>
     <gap:config-file parent="CFBundleShortVersionString" platform="ios">
-        <string>117</string>
+        <string>017</string>
     </gap:config-file>
     <access origin="*" />
     <icon gap:platform="ios" height="57" src="icon_5757.png" width="57" />
@@ -19,18 +19,6 @@
     <icon gap:platform="ios" height="76" src="icon_7676.png" width="76" />
     <icon gap:platform="ios" height="152" src="icon_152152.png" width="152" />
     <icon gap:platform="ios" height="120" src="icon_120120.png" width="120" />
-    <gap:splash gap:platform="ios" height="960" src="splash.png" width="640" />
-    <gap:splash gap:platform="ios" height="960" src="splashportrait.png" width="640" />
-    <gap:splash gap:platform="ios" height="768" src="splashlandscape.png" width="1024" />
-    <gap:splash gap:platform="ios" height="480" src="splashportrait_320480.png" width="320" />
-    <gap:splash gap:platform="ios" height="320" src="splashlandscape_480320.png" width="480" />
-    <gap:splash gap:platform="ios" height="640" src="splashlandscape_960640.png" width="960" />
-    <gap:splash gap:platform="ios" height="1024" src="splashportrait_7681024.png" width="768" />
-    <gap:splash gap:platform="ios" height="2008" src="splashportrait_15362008.png" width="1536" />
-    <gap:splash gap:platform="ios" height="1496" src="splashlandscape_20481496.png" width="2048" />
-    <gap:splash gap:platform="ios" height="1136" src="splashportrait_6401136.png" width="640" />
-    <gap:splash gap:platform="android" gap:qualifier="normal-port" src="splashportrait.png" />
-    <gap:splash gap:platform="android" gap:qualifier="normal-land" src="splashlandscape.png" />
     <gap:platform name="android" />
     <gap:platform name="ios" />
     <preference name="phonegap-version" value="cli-6.5.0" />
