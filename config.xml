@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.e-spirit.ps.daimler.caas.mobile.app"
+        versionCode = "017" 
+        version   = "0.1.7">
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>Daimler DSD mobile app</name>
+    
+    <preference name='phonegap-version' value='cli-6.5.0' />
+    
+
+    <description>
+        Mobile App for Daimler DSD 
+    </description>
+
+    <author href="http://www.e-spirit.com" email="richter@e-spirit.com">
+        e-Spirit AG 
+    </author>
+    
+    <gap:config-file platform="ios" parent="CFBundleShortVersionString">
+       <string>017</string>
+    </gap:config-file>
+
+    <!--
+      If you do not want any permissions to be added to your app, add the
+      following tag to your config.xml; you will still have the INTERNET
+      permission on your app, which PhoneGap requires.
+    -->
+    
+    <preference name="permissions" value="none"/>
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="android-minSdkVersion" value="11" />
+
+    <!-- to enable individual permissions use the following examples -->
+    
+    <access origin="*" />
+    
+    <icon src="icon_5757.png" gap:platform="ios" width="57" height="57" />
+    <icon src="icon_7272.png" gap:platform="ios" width="72" height="72" />
+    <icon src="icon_7676.png" gap:platform="ios" width="76" height="76" />
+    <icon src="icon_152152.png" gap:platform="ios" width="152" height="152" />
+    <icon src="icon_120120.png" gap:platform="ios" width="120" height="120" />
+    
+    <gap:splash src="splash.png" gap:platform="ios" width="640" height="960" />
+    
+    <gap:splash src="splashportrait.png" gap:platform="ios" width="640" height="960" />
+    <gap:splash src="splashlandscape.png" gap:platform="ios" width="1024" height="768" />
+    <gap:splash src="splashportrait_320480.png"          gap:platform="ios"     width="320" height="480" />
+  <gap:splash src="splashlandscape_480320.png"         gap:platform="ios"     width="480" height="320" />
+  <gap:splash src="splashlandscape_960640.png"      gap:platform="ios"     width="960" height="640" />
+  <gap:splash src="splashportrait_7681024.png"            gap:platform="ios"     width="768" height="1024" />
+  <gap:splash src="splashportrait_15362008.png"         gap:platform="ios"     width="1536" height="2008" />
+  <gap:splash src="splashlandscape_20481496.png"        gap:platform="ios"     width="2048" height="1496" />
+  <gap:splash src="splashportrait_6401136.png"  gap:platform="ios"     width="640"  height="1136" />
+    
+    <gap:splash src="splashportrait.png" gap:platform="android" gap:qualifier="normal-port" />
+    <gap:splash src="splashlandscape.png" gap:platform="android" gap:qualifier="normal-land" />
+    
+    <!-- <gap:platform name="ios" /> -->
+    
+    <gap:platform name="android" />
+    <gap:platform name="ios" />
+    
+    <plugin name="cordova-plugin-device" spec="~1.1.7" />
+    <!-- <gap:plugin name="org.apache.cordova.device" /> -->
+    <!-- <gap:plugin name="com.phonegap.plugin.statusbar" version="2.3.0" /> -->
+    <plugin name="cordova-plugin-statusbar" spec="~2.3.0" />
+    <!-- <gap:plugin name="org.apache.cordova.InAppBrowser" /> -->
+    <plugin name="cordova-plugin-inappbrowser" spec="~1.7.2" />
+    
+    <feature name="StatusBar">
+            <param name="ios-package" value="CDVStatusBar" onload="true" />
+    </feature>
+
+    <feature name="InAppBrowser">
+                <param name="ios-package" value="CDVInAppBrowser" /> 
+    </feature>
+        
+</widget>

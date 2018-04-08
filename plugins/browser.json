@@ -1,0 +1,21 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "de.conturio.dkm.stellenmarkt.app"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "de.conturio.dkm.stellenmarkt.app"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "de.conturio.dkm.stellenmarkt.app"
+        }
+    },
+    "dependent_plugins": {}
+}
