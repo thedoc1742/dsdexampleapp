@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.e-spirit.ps.daimler.caas.mobile.app"
+        id        = "com.e-spirit.ps.dsd.caas.mobile.app"
         versionCode = "017" 
         version   = "0.1.7">
 
     <!-- versionCode is optional and Android only -->
 
-    <name>Daimler DSD mobile app</name>
+    <name>DSD example mobile app</name>
     
     <preference name='phonegap-version' value='cli-6.5.0' />
     
 
     <description>
-        Mobile App for Daimler DSD 
+        Mobile App for DSD 
     </description>
 
     <author href="http://www.e-spirit.com" email="richter@e-spirit.com">
