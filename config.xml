@@ -44,7 +44,7 @@
     <icon src="icon_152152.png" gap:platform="ios" width="152" height="152" />
     <icon src="icon_120120.png" gap:platform="ios" width="120" height="120" />
     
-    <gap:splash src="splash.png" gap:platform="ios" width="640" height="960" />
+    <!-- <gap:splash src="splash.png" gap:platform="ios" width="640" height="960" />
     
     <gap:splash src="splashportrait.png" gap:platform="ios" width="640" height="960" />
     <gap:splash src="splashlandscape.png" gap:platform="ios" width="1024" height="768" />
@@ -59,7 +59,7 @@
     <gap:splash src="splashportrait.png" gap:platform="android" gap:qualifier="normal-port" />
     <gap:splash src="splashlandscape.png" gap:platform="android" gap:qualifier="normal-land" />
     
-    <!-- <gap:platform name="ios" /> -->
+    -->
     
     <gap:platform name="android" />
     <gap:platform name="ios" />
