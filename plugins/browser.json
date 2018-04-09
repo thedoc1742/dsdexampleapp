@@ -15,6 +15,9 @@
         },
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "de.conturio.dkm.stellenmarkt.app"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.e-spirit.ps.dsd.caas.mobile.app"
         }
     },
     "dependent_plugins": {}

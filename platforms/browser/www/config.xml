@@ -14,6 +14,8 @@
         <string>017</string>
     </gap:config-file>
     <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
     <icon src="icon.png" />
     <icon gap:platform="ios" height="57" src="icon_5757.png" width="57" />
     <icon gap:platform="ios" height="72" src="icon_7272.png" width="72" />

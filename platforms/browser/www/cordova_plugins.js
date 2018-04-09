@@ -49,7 +49,8 @@ module.exports.metadata =
 {
     "cordova-plugin-device": "1.1.7",
     "cordova-plugin-statusbar": "2.3.0",
-    "cordova-plugin-inappbrowser": "1.7.2"
+    "cordova-plugin-inappbrowser": "1.7.2",
+    "cordova-plugin-whitelist": "1.2.2"
 }
 // BOTTOM OF METADATA
 });

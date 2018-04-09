@@ -38,18 +38,15 @@
    });  
    
    function showTOP() {
-      alert('Hallo! '+caasRestAPIURL);
+      
       var ht = '';
+      
       $.getJSON(caasRestAPIURL, function(data){
     	
       ht = "<ul data-role='listview' data-inset='true' data-divider-theme='a'><li data-role='list-divider' data-theme='a'>TOP 5 News</li>";
   	  
-      alert('Hallo 2! '+caasRestAPIURL);
-      
       $.each(data["_embedded"]["rh:doc"], function (index, value) {
             console.log(value["_id"]);
-            alert('Hallo 3! '+caasRestAPIURL);
-      
             if(value["_id"].indexOf("_de") >= 0 && index < 10) {
             ht += '<li><a href="#" data-rel="popup" data-transition="pop"><h3>'+value["headline"]+'</h3>'+value["teaser"]+'</a></li>';
        			ht += '<div data-role="popup" id="jobPopuptf'+value["id"]+'" data-scroll="x" data-overlay-theme="a" data-theme="a" class="ui-content" data-position-to="window">';
@@ -58,15 +55,8 @@
     	      });
     	$('#top5list').html(ht+"</ul>").trigger("create");
   	  
-      alert('Huhu!'+ht);
-  	  
       });
-    	
-      
-        
-  	  
-  	  
-      };
+   };
       
    function onDeviceReady() {
        mobileUUID = device.uuid;
@@ -100,11 +90,11 @@
   				      	<img src="img/bild.png" style="width: auto; padding: 0px 10px 10px 10px; float: left;"><span id="introtext"></span>
             </div> -->		
             <div style="padding: 5px;" id="top5list">
-            Tralala
+            <img src="css/themes/images/ajax-loader.gif" style="border: 0; padding: 10px; display: block; margin-left: auto; margin-right: auto;"/>
   				  </div>
   				</div>             
             	<div data-role="footer" data-position="fixed" id="dsdfooter">
-               		  <img src="img/img_logo_daimler_png.png" style="border: 0; padding: 10px; display: block; margin-left: auto; margin-right: auto;">
+               		  <img src="img/img_logo_daimler_png.png" style="border: 0; padding: 10px; display: block; margin-left: auto; margin-right: auto;"/>
             	</div>
            </div>
        </div>
