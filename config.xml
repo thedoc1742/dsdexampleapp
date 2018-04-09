@@ -38,6 +38,10 @@
     
     <access origin="*" />
     
+    <allow-intent href="http://*/*" />  
+  
+    <allow-intent href="https://*/*" />  
+    
     <icon src="icon.png" />
     
     
@@ -68,6 +72,8 @@
     <plugin name="cordova-plugin-device" spec="~1.1.7" />
     <plugin name="cordova-plugin-statusbar" spec="~2.3.0" />
     <plugin name="cordova-plugin-inappbrowser" spec="~1.7.2" />
+    <plugin name="cordova-plugin-whitelist" spec="~1.2.1" />
+    
     
         
 </widget>
