@@ -38,14 +38,18 @@
    });  
    
    function showTOP() {
-      alert('Hallo!');
+      alert('Hallo! '+caasRestAPIURL);
       var ht = '';
       $.getJSON(caasRestAPIURL, function(data){
     	
       ht = "<ul data-role='listview' data-inset='true' data-divider-theme='a'><li data-role='list-divider' data-theme='a'>TOP 5 News</li>";
   	  
+      alert('Hallo 2! '+caasRestAPIURL);
+      
       $.each(data["_embedded"]["rh:doc"], function (index, value) {
             console.log(value["_id"]);
+            alert('Hallo 3! '+caasRestAPIURL);
+      
             if(value["_id"].indexOf("_de") >= 0 && index < 10) {
             ht += '<li><a href="#" data-rel="popup" data-transition="pop"><h3>'+value["headline"]+'</h3>'+value["teaser"]+'</a></li>';
        			ht += '<div data-role="popup" id="jobPopuptf'+value["id"]+'" data-scroll="x" data-overlay-theme="a" data-theme="a" class="ui-content" data-position-to="window">';
