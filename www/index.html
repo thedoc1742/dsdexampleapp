@@ -38,6 +38,7 @@
    });  
    
    function showTOP() {
+      alert('Hallo!');
       var ht = '';
       $.getJSON(caasRestAPIURL, function(data){
     	
@@ -53,11 +54,12 @@
     	      });
     	$('#top5list').html(ht+"</ul>").trigger("create");
   	  
+      alert('Huhu!'+ht);
+  	  
       });
     	
       
-      
-  	    
+        
   	  
   	  
       };
@@ -65,10 +67,8 @@
    function onDeviceReady() {
        mobileUUID = device.uuid;
        userCookie = device.uuid;
-       if(device.platform == "iOS") { 
-          StatusBar.overlaysWebView(false);
-       }
-      } 
+       
+   } 
       
   function onLoad() {
        showTOP();
