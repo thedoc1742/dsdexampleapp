@@ -21,6 +21,9 @@
     <icon gap:platform="ios" height="120" src="icon_120120.png" width="120" />
     <gap:platform name="android" />
     <gap:platform name="ios" />
+    <config-file mode="merge" parent="/manifest" platform="android">
+        <application android:debuggable="true" />
+    </config-file>
     <preference name="phonegap-version" value="cli-6.5.0" />
     <preference name="permissions" value="none" />
     <preference name="SplashScreenDelay" value="3000" />

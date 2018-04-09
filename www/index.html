@@ -29,124 +29,40 @@
    var searchresult = {};
        
    
-   caasRestAPIURL = 'http://rest.dkm-service.de/api';
+   caasRestAPIURL = 'http://www.doc-richter.de/rest.php?urlajax=https://do-caas-extlieb.e-spirit.com/rest/Demo/news/';
 
    var userCookie = "richter";
    
    
    $(document).ready(function() {    
       
-      
-    $.getJSON(caasRestAPIURL+"/jobs/berufsfelder/json", function(data){
- 		  $.each(data, function (index, value) {
- 	      	    arrBerufsfelder.push(value["id"]);
- 		  });
- 	  });
-       
- 	  $.getJSON(caasRestAPIURL+"/jobs/branchen/json", function(data){
- 		  $.each(data, function (index, value) {
- 	      	    arrBranchen.push(value["id"]);
- 		  });
- 	  });
- 	  
- 	  $.getJSON(caasRestAPIURL+"/jobs/typen/json", function(data){
- 		  $.each(data, function (index, value) {
- 	      	    arrStellentypen.push(value["id"]);
- 		  });
- 	  });
-	  
-    $.get(caasRestAPIURL+"/jobs/number/total", function(data){  
-          $("#jobnumber").html(data);  
-    });
-      
-    $.get(caasRestAPIURL+"/jobs/text/introduction", function(data){  
-          $("#introtext").html(data);  
-    });
-      
-	  document.addEventListener("deviceready", onDeviceReady , false);
+ 	  document.addEventListener("deviceready", onDeviceReady , false);
        
    });  
    
    function showTOP() {
-   
-      $.getJSON(caasRestAPIURL+"/jobs/latest/5___"+userCookie+"___"+$.now(), function(data){
-    	$htmlstring = "<ul data-role='listview' data-inset='true' data-divider-theme='a'><li data-role='list-divider' data-theme='a'>TOP 5 News</li>";
-  	    // $htmlstring += '<li><a href="#" onClick="window.plugins.childBrowser.showWebPage(\'http://www.dkm-service.de/dkm_cmsadmin/file_output.php?file=job150332.pdf&type=show\');" rel="external"><h3>Koch/K&ouml;chin</h3><p>PLZ: 48165</p><p>bereitgestellt am 17.03.2013</p></a></li>';
+      var ht = '';
+      $.getJSON(caasRestAPIURL, function(data){
     	
-    	$.each(data, function (index, value) {
-    	    if(value["fav"] == "true") {
-    			iconFav = "fav-active";
-   				iconFavText = "gemerkt"
-    		} else {
-    			iconFav = "fav-inactive";
-    			iconFavText = "merken"
-    		}
-    		
-    		if(value["jobtype"] == "text") {
-       			$htmlstring += '<li><a href="#jobPopuptf'+value["id"]+'" data-rel="popup" data-transition="pop"><h3>'+value["name"]+'</h3><p>PLZ:'+value["plz"]+'</p><p>'+value["subline"]+'</p></a></li>';
-       			$htmlstring += '<div data-role="popup" id="jobPopuptf'+value["id"]+'" data-scroll="x" data-overlay-theme="a" data-theme="a" class="ui-content" data-position-to="window">';
-       			$htmlstring += '</div>';
-       		} else if (value["jobtype"] == "bildpdf" || (value["jobtype"] == "url" && value["url"].indexOf(".pdf") >= 0)) {
-       			$htmlstring += '<li><a href="#jobPopuptf'+value["id"]+'" data-rel="popup" data-transition="pop"><h3>'+value["name"]+'</h3><p>PLZ:'+value["plz"]+'</p><p>'+value["subline"]+'</p></a></li>';
-       			$htmlstring += '<div data-role="popup" id="jobPopuptf'+value["id"]+'" data-overlay-theme="a" data-theme="a" class="ui-content" data-position-to="window"><a href="#" id="favlinktf'+value["id"]+'" data-role="button" data-theme="a" data-icon="'+iconFav+'" data-iconpos="left" data-mini="true" class="ui-btn-left">'+iconFavText+'</a><a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>';
-       			$htmlstring += '<p style="text-align: center;">';
-       			$htmlstring += '<a data-theme="a" data-inline="true" data-icon="arrow-d" id="pdflinktf'+value["id"]+'" data-role="button" href="'+value["url"]+'">PDF-Download</a>';
-    		    $htmlstring += '</p>';
-    		    // '</object>';
-    		    $htmlstring += '</div>';
-       		} else {
-       			$htmlstring += '<li><a href="#jobPopuptf'+value["id"]+'" data-rel="popup" data-transition="pop"><h3>'+value["name"]+'</h3><p>PLZ:'+value["plz"]+'</p><p>'+value["subline"]+'</p></a></li>';
-       			$htmlstring += '<div data-role="popup" id="jobPopuptf'+value["id"]+'" data-overlay-theme="a" data-theme="a" class="ui-content" data-position-to="window"><a href="#" id="favlinktf'+value["id"]+'" data-role="button" data-theme="a" data-icon="'+iconFav+'" data-iconpos="left" data-mini="true" class="ui-btn-left">'+iconFavText+'</a><a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>';
-       			$htmlstring += '</div>';
-       		}
-  	    });
+      ht = "<ul data-role='listview' data-inset='true' data-divider-theme='a'><li data-role='list-divider' data-theme='a'>TOP 5 News</li>";
+  	  
+      $.each(data["_embedded"]["rh:doc"], function (index, value) {
+            console.log(value["_id"]);
+            if(value["_id"].indexOf("_de") >= 0 && index < 10) {
+            ht += '<li><a href="#" data-rel="popup" data-transition="pop"><h3>'+value["headline"]+'</h3>'+value["teaser"]+'</a></li>';
+       			ht += '<div data-role="popup" id="jobPopuptf'+value["id"]+'" data-scroll="x" data-overlay-theme="a" data-theme="a" class="ui-content" data-position-to="window">';
+       			ht += '</div>';
+            }
+    	      });
+    	$('#top5list').html(ht+"</ul>").trigger("create");
+  	  
+      });
     	
-  	  $('#top5list').html($htmlstring+"</ul>").trigger("create");
+      
+      
   	    
-  	  $("a[id*=pdflink]").on( "click", function( event ) {
-    	  event.preventDefault();
-    	  var targetlink = $(this).attr("href");
-    	  var ref = window.open(targetlink,"_system","location=yes");
-      });
-		  
-  	  $.each(data, function (index, value) {
-			
-      if(value["jobtype"] == "text") {
-				$( "#jobPopuptf"+value["id"] ).on({
-			        popupbeforeposition: function() {
-			          setIFrame(value["id"],"http://media.dkm-service.de/stellenmarkt/index.php?module=showjob&ID="+value["id"]+"&location=mobile","tf",value["fav"]);
-			        },
-			        popupafterclose: function() {}
-			    });
-				
-     	} else if (value["jobtype"] == "url" && value["url"].indexOf(".pdf") < 0) {
-     			$( "#jobPopuptf"+value["id"] ).on({
-			        popupbeforeposition: function() {
-			        	setIFrame(value["id"],value["url"],"tf",value["fav"]);
-			        },
-			        popupafterclose: function() {}
-			    });
-     	} else if (value["jobtype"] == "bildpdf" || (value["jobtype"] == "url" && value["url"].indexOf(".pdf") >= 0)) {
-			 $("#favlinktf"+value["id"]).on("click", function(event) {
-   			 if($(this).attr("data-icon") == "fav-active") {
-   				 $.get(caasRestAPIURL+"/jobs/favorite/delete/"+userCookie+"__"+value["id"], function(data){  
-   				 });
-   				 
-   				 $(this).attr("data-icon","fav-inactive");
-   				 $(this).find('.ui-icon').removeClass('ui-icon-fav-active').addClass('ui-icon-fav-inactive');
-   				 $(this).find('.ui-btn-text').text("merken");
-   	 		 } else {
-   	 			$.get(caasRestAPIURL+"/jobs/favorite/add/"+userCookie+"__"+value["id"], function(data){  
-   	 			});
-   	 			$(this).attr("data-icon","fav-active");
-   				$(this).find('.ui-icon').removeClass('ui-icon-fav-inactive').addClass('ui-icon-fav-active');
-   				$(this).find('.ui-btn-text').text("gemerkt");
-   	 		 }
-   		  });
-    	}
-		 
-      });
-      });
+  	  
+  	  
       };
       
    function onDeviceReady() {
