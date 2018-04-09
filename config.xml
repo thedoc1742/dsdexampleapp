@@ -38,6 +38,9 @@
     
     <access origin="*" />
     
+    <icon src="icon.png" />
+    
+    
     <icon src="icon_5757.png" gap:platform="ios" width="57" height="57" />
     <icon src="icon_7272.png" gap:platform="ios" width="72" height="72" />
     <icon src="icon_7676.png" gap:platform="ios" width="76" height="76" />
@@ -62,7 +65,6 @@
     -->
     
     <gap:platform name="android" />
-    
     <plugin name="cordova-plugin-device" spec="~1.1.7" />
     
         
