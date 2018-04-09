@@ -14,16 +14,13 @@
         <string>017</string>
     </gap:config-file>
     <access origin="*" />
+    <icon src="icon.png" />
     <icon gap:platform="ios" height="57" src="icon_5757.png" width="57" />
     <icon gap:platform="ios" height="72" src="icon_7272.png" width="72" />
     <icon gap:platform="ios" height="76" src="icon_7676.png" width="76" />
     <icon gap:platform="ios" height="152" src="icon_152152.png" width="152" />
     <icon gap:platform="ios" height="120" src="icon_120120.png" width="120" />
     <gap:platform name="android" />
-    <gap:platform name="ios" />
-    <config-file mode="merge" parent="/manifest" platform="android">
-        <application android:debuggable="true" />
-    </config-file>
     <preference name="phonegap-version" value="cli-6.5.0" />
     <preference name="permissions" value="none" />
     <preference name="SplashScreenDelay" value="3000" />
