@@ -62,21 +62,8 @@
     -->
     
     <gap:platform name="android" />
-    <gap:platform name="ios" />
     
     <plugin name="cordova-plugin-device" spec="~1.1.7" />
-    <!-- <gap:plugin name="org.apache.cordova.device" /> -->
-    <!-- <gap:plugin name="com.phonegap.plugin.statusbar" version="2.3.0" /> -->
-    <plugin name="cordova-plugin-statusbar" spec="~2.3.0" />
-    <!-- <gap:plugin name="org.apache.cordova.InAppBrowser" /> -->
-    <plugin name="cordova-plugin-inappbrowser" spec="~1.7.2" />
     
-    <feature name="StatusBar">
-            <param name="ios-package" value="CDVStatusBar" onload="true" />
-    </feature>
-
-    <feature name="InAppBrowser">
-                <param name="ios-package" value="CDVInAppBrowser" /> 
-    </feature>
         
 </widget>
