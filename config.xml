@@ -66,6 +66,8 @@
     
     <gap:platform name="android" />
     <plugin name="cordova-plugin-device" spec="~1.1.7" />
+    <plugin name="cordova-plugin-statusbar" spec="~2.3.0" />
+    <plugin name="cordova-plugin-inappbrowser" spec="~1.7.2" />
     
         
 </widget>

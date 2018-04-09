@@ -16,11 +16,11 @@
   
   $(document).bind("mobileinit", function(){
       $.mobile.allowCrossDomainPages = true;
-      $.mobile.ajaxEnabled = false;
+      $.mobile.ajaxEnabled = true;
       $.mobile.page.prototype.options.domCache = false;
    });
    
-    document.addEventListener("deviceready", onDeviceReady, false);  
+   document.addEventListener("deviceready", onDeviceReady, false);  
    
    var caasRestAPIURL = null;
    var arrBranchen = [];
@@ -31,13 +31,10 @@
    
    caasRestAPIURL = 'http://www.doc-richter.de/rest.php?urlajax=https://do-caas-extlieb.e-spirit.com/rest/Demo/news/';
 
-   var userCookie = "richter";
-   
    
    $(document).ready(function() {    
       
- 	  document.addEventListener("deviceready", onDeviceReady , false);
-       
+ 	  document.addEventListener("deviceready", onDeviceReady , false);  
    });  
    
    function showTOP() {
