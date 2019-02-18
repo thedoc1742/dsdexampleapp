@@ -29,7 +29,8 @@
    var searchresult = {};
        
    
-   caasRestAPIURL = 'http://www.doc-richter.de/rest.php?urlajax=https://do-caas-extlieb.e-spirit.com/rest/Demo/news/';
+   // caasRestAPIURL = 'https://vw-pia.e-spirit.com/dashboard/caasproxy.jsp?urlStr=/Demo/news';
+   caasRestAPIURL = "http://www.doc-richter.de/rest.php?urlajax=https://vw-pia.e-spirit.com/rest/Demo/news";
 
    
    $(document).ready(function() {    
@@ -46,8 +47,8 @@
       ht = "<ul data-role='listview' data-inset='true' data-divider-theme='a'><li data-role='list-divider' data-theme='a'>TOP 5 News</li>";
   	  
       $.each(data["_embedded"]["rh:doc"], function (index, value) {
-            console.log(value["_id"]);
-            if(value["_id"].indexOf("_de") >= 0 && index < 10) {
+            console.log(value);
+            if(index > 0 && value["fs_language"].indexOf("DE") >= 0 && index <= 10) {
             ht += '<li><a href="#" data-rel="popup" data-transition="pop"><h3>'+value["headline"]+'</h3>'+value["teaser"]+'</a></li>';
        			ht += '<div data-role="popup" id="jobPopuptf'+value["id"]+'" data-scroll="x" data-overlay-theme="a" data-theme="a" class="ui-content" data-position-to="window">';
        			ht += '</div>';
@@ -73,7 +74,7 @@
   <body onload="onLoad();">
        <div data-role="page" class="ui-page" id="start" data-theme="a">
             <div data-role="header" data-position="fixed" data-theme="a" id="dkmheader">
-              <h1>DSD mobile app example</h1>
+              <h1>VW mobile app example</h1>
               <a href="index.html" data-icon="home" data-role="button" data-iconpos="notext" class="ui-btn-left" data-ajax="false"></a>
               <!-- <a href="#popupNavi" data-transition="pop" data-rel="popup" data-icon="bars" data-role="button" data-iconpos="notext" class="ui-btn-right"></a>
               <div data-role="popup" id="popupNavi" data-theme="a">
@@ -94,7 +95,6 @@
   				  </div>
   				</div>             
             	<div data-role="footer" data-position="fixed" id="dsdfooter">
-               		  <img src="img/img_logo_daimler_png.png" style="border: 0; padding: 10px; display: block; margin-left: auto; margin-right: auto;"/>
             	</div>
            </div>
        </div>

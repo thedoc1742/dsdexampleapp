@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.e-spirit.ps.dsd.caas.mobile.app" version="0.1.7" versionCode="017" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.e-spirit.ps.dsd.caas.mobile.app" version="0.1.8" versionCode="018" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
     <feature name="Device">
         <param name="browser-package" value="Device" />
     </feature>
-    <name>DSD example mobile app</name>
+    <name>VW example mobile app</name>
     <description>
-        Mobile App for DSD 
+        Mobile App for VW 
     </description>
     <author email="richter@e-spirit.com" href="http://www.e-spirit.com">
         e-Spirit AG 
     </author>
     <gap:config-file parent="CFBundleShortVersionString" platform="ios">
-        <string>017</string>
+        <string>018</string>
     </gap:config-file>
     <access origin="*" />
     <allow-intent href="http://*/*" />
