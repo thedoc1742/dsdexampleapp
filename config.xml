@@ -2,18 +2,18 @@
     <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.e-spirit.ps.dsd.caas.mobile.app"
-        versionCode = "017" 
-        version   = "0.1.7">
+        versionCode = "018" 
+        version   = "0.1.8">
 
     <!-- versionCode is optional and Android only -->
 
-    <name>DSD example mobile app</name>
+    <name>VW example mobile app</name>
     
     <preference name='phonegap-version' value='cli-6.5.0' />
     
 
     <description>
-        Mobile App for DSD 
+        Mobile App for VW 
     </description>
 
     <author href="http://www.e-spirit.com" email="richter@e-spirit.com">
@@ -21,7 +21,7 @@
     </author>
     
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
-       <string>017</string>
+       <string>018</string>
     </gap:config-file>
 
     <!--
